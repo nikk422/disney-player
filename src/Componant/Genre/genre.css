@@ -1,0 +1,15 @@
+.cateImg{
+    width:16.5rem;
+    height:29vh; 
+    border-radius: 0.5rem; 
+}
+
+.genre-contain{
+    color:var(--white-200);
+    box-shadow:2px 2px  2px rgb(0 6 9);
+}
+.genre-contain:hover{
+    transform: scale(1.1);
+    transition: .5s;
+
+}
