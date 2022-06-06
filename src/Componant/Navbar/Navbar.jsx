@@ -1,5 +1,7 @@
 import "./navbar.css";
 import { Link } from "react-router-dom";
+import { FaUser } from 'react-icons/fa';
+
 
 const Navbar = () => {
 
@@ -23,7 +25,7 @@ const Navbar = () => {
       </section>
       <section>
         <Link to="/login">
-          <i class="fas fa-user loginIcon font-26p hoverText"></i>
+          <i className=" loginIcon font-26p hoverText"><FaUser/></i>
         </Link>
       </section>
     </header>
