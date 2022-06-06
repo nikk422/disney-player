@@ -1,0 +1,21 @@
+.genre-list {
+    margin: 1rem 0rem 1rem 0rem;
+
+}
+
+.genreChips-container {
+    background-color: var(--black-1000);
+}
+
+.genre-btn {
+    border-radius: 0.5rem;
+    border: solid 2px var(--full-white);
+    font-weight: bold;
+    background-image: var(--linear-color);
+    color: var(--full-white);
+
+}
+
+.genre-btn:focus {
+    border: 4px solid #c026d3;
+}

@@ -1,0 +1,21 @@
+.video-container {
+    display: grid;
+    grid-template-columns: 12.5rem 1fr;
+    color:var(--full-white);
+
+}
+
+.loader {
+    margin: auto;
+    border: 1rem solid #EAF0F6;
+    border-radius: 50%;
+    border-top: 1.2rem solid #f159ff;
+    width: 16rem;
+    height: 16rem;
+    animation: spinner 5s linear infinite;
+  }
+  
+  @keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

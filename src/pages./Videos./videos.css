@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Libre+Bodoni:ital@1&family=Permanent+Marker&family=Roboto+Slab&family=Rubik+Wet+Paint&family=Satisfy&family=Shadows+Into+Light&family=Tapestry&display=swap');
+
+.videolist-contain{
+    margin-left:0.5rem;
+    font-family: 'Playfair Display SC', serif;
+ 
+}
+.video-img{
+    width:19rem;
+
+}
+
+.videos-detail{
+    margin:1rem 0.2rem 1rem 0;
+}
+
+.videos-detail:hover{
+    transform: scale(1.1);
+    transition: .5s;
+}
+
+.about-video{
+    padding-top:0.5rem;
+}
+
+.badge-img{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
