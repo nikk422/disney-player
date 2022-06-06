@@ -18,7 +18,7 @@ const Genre = () => {
                 VideoDispatch({ type: "FILTER_BY_GENRE", payload: item.genre })
               }
             >
-              <img className="cateImg" src={item.catImg} alt="/" />
+              <img className="cateImg" src={item.categoryImg} alt="/" />
             </button>
           </Link>
           <h2>{item.genre}</h2>

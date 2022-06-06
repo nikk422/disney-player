@@ -18,7 +18,7 @@ const Navbar = () => {
         <input
           type="search"
           placeholder="search songs"
-          className="Serch-box padding-8p font-16p"
+          className="Search-box padding-8p font-16p"
         />
       </section>
       <section>
