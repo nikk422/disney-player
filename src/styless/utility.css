@@ -43,6 +43,9 @@
 .gap-8p{
     gap:0.5rem;
 }
+.gap-10px{
+    gap:0.7rem;
+}
 .gap-1r{
     gap:1rem;
 }
@@ -65,8 +68,14 @@
 .margin-1r{
     margin: 1rem;
 }
+.margin-8p{
+    margin:0.5rem;
+}
 .padding-4px{
     padding:0.2rem;
+}
+.padding-22px{
+    padding:1.5rem;
 }
 .padding-24p{
     padding:1.8rem;
@@ -77,5 +86,23 @@
 
 .position-sticky{
     position:sticky;
+}
+
+.position-sticky-6r{
+    position:sticky;
+    top:6rem;
+}
+
+
+.position-sticky{
+    position:sticky;
     top:0;
+}
+
+.positon-relative{
+    position: relative;
+}
+
+.z-index-1{
+    z-index: 1;
 }
