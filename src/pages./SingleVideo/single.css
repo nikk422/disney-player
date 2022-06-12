@@ -1,0 +1,23 @@
+
+.single-video-container{
+    display: grid;
+    grid-template-columns: 12.5rem 1fr 20.5rem;
+    color: var(--full-white);
+    font-family: 'Playfair Display SC', serif;
+
+}
+
+.single-video-detail{
+    margin-right: 0.5rem;
+}
+
+.Suggestions-heading{
+    text-decoration: underline;
+}
+
+.watchLaterBtn{
+    background-image: var( --linear-color);
+    color:var(--full-white);
+    border:none;
+}
+

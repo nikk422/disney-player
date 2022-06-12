@@ -50,8 +50,14 @@
     gap:1rem;
 }
 
+.gap-18p{
+    gap:1.2rem;
+}
 .gap-2r{
     gap:2rem;
+}
+.gap-3r{
+    gap:3rem;
 }
 
 
@@ -70,6 +76,16 @@
 }
 .margin-8p{
     margin:0.5rem;
+}
+
+.margin-1r{
+    margin: 1rem;
+}
+.margin-top-22p{
+    margin-top:1.5rem;
+}
+.margin-22p{
+    margin: 1.5rem;
 }
 .padding-4px{
     padding:0.2rem;
