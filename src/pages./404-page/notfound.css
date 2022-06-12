@@ -1,0 +1,17 @@
+
+.notfound-container{
+    height:100vh;
+    color:var(--full-white);
+    font-family: 'Roboto Slab', serif;
+
+}
+.heading-center{
+    margin-top: 2rem;
+}
+.notfound{
+    font-size:18rem;
+    color:rgb(221, 188, 188);
+}
+.backBtn{
+    font-weight:bold;
+}
