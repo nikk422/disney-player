@@ -9,21 +9,21 @@ const VideoListing = () => {
   const { loader } = useVideos();
 
   return (
-    <div>
+    <main>
       <Navbar />
-      <div className="video-container">
-        <div>
+      <section className="video-container">
+        <aside>
           <Sidebar />
-        </div>
+        </aside>
         {loader && <h2 className="loader"></h2>}
-        <div>
+        <section>
           <GenreFilter />
           <div className="All-videos">
             <Videos />
           </div>
-        </div>
-      </div>
-    </div>
+        </section>
+      </section>
+    </main>
   );
 };
 export default VideoListing;

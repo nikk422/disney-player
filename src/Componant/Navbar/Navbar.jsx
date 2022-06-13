@@ -1,9 +1,12 @@
 import "./navbar.css";
 import { Link } from "react-router-dom";
 import { FaUser } from 'react-icons/fa';
+import {useAuth} from "../../Context/Auth-context";
 
 
 const Navbar = () => {
+
+  const {isStatus}=useAuth()
 
   return (
     <header className="navbar-container flex-justify-between gap-2r padding-24p position-sticky">
@@ -24,9 +27,17 @@ const Navbar = () => {
         />
       </section>
       <section>
+
+      {isStatus ? (
+        <Link to="/logout">
+        <i className=" loginIcon font-26p hoverText"><FaUser/></i>
+        </Link>
+      ):(
         <Link to="/login">
           <i className=" loginIcon font-26p hoverText"><FaUser/></i>
         </Link>
+      )
+      }
       </section>
     </header>
   );
