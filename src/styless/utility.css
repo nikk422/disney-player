@@ -39,7 +39,9 @@
 .text-align {
     text-align: center;
 }
-
+.gap-5p{
+    gap:0.4px
+}
 .gap-8p{
     gap:0.5rem;
 }
@@ -77,12 +79,25 @@
 .margin-8p{
     margin:0.5rem;
 }
-
+.margin-2p{
+    margin:0.1rem;
+}
 .margin-1r{
     margin: 1rem;
 }
 .margin-top-22p{
     margin-top:1.5rem;
+}
+
+.margin-top-32p{
+    margin-top: 2rem;
+}
+
+.margin-top-16p{
+    margin-top: 1rem;
+}
+.margin-2r{
+    margin: 2rem;
 }
 .margin-22p{
     margin: 1.5rem;
@@ -93,11 +108,18 @@
 .padding-22px{
     padding:1.5rem;
 }
+.padding-17p{
+    padding:1.1rem;
+}
 .padding-24p{
     padding:1.8rem;
 }
 .padding-8p{
     padding:0.5rem;
+}
+
+.padding-2px{
+    padding: 0.3rem;
 }
 
 .position-sticky{
@@ -122,3 +144,4 @@
 .z-index-1{
     z-index: 1;
 }
+

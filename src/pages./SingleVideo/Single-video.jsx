@@ -4,20 +4,27 @@ import { useVideos } from "../../Context/Videos-Context";
 import Sidebar from "../../Componant/SideBar/SideBar";
 import Videos from "../Videos./Videos";
 import Navbar from "../../Componant/Navbar/Navbar";
+import { useWatchlater } from "../../Context/Features-page/WatchLater-context";
+import { useLikes } from "../../Context/Features-page/Likes-context";
 
 const SingleVideo = () => {
   const { VideoId } = useParams();
   const { video } = useVideos();
+  
+  const { removeWatchVideo, WatchLaterVideos, getWatchLaterVideo } =
+    useWatchlater();
+
+  const { getLikedVideo, removeLikeVideo, LikeVideos } = useLikes();
 
   const playVideo = video.find((play) => play.id === VideoId);
 
   return (
-    <div>
+    <main>
       <Navbar />
       <div className="single-video-container gap-18p">
-        <div>
+        <aside>
           <Sidebar />
-        </div>
+        </aside>
         <div className="iframe-container margin-top-22p">
           <iframe
             width="950px"
@@ -33,34 +40,69 @@ const SingleVideo = () => {
               {playVideo.views} views. <span> {playVideo.release}</span>
             </p>
             <div className="single-video-detail font-18p flex gap-3r">
-              <i className="fa fa-thumbs-up likesicon" aria-hidden="true"> Likes
-              </i>
-              <i class="fas fa-clock watch-later-btn font-18p"> Watch later</i>
-
+              {LikeVideos.some((data) => data.id === playVideo.id) ? (
+                <i
+                  onClick={() => {
+                    removeLikeVideo(playVideo.id);
+                  }}
+                  style={{ color: "red" }}
+                  className="fa fa-thumbs-up "
+                  aria-hidden="true"
+                >
+                   DisLike
+                </i>
+              ) : (
+                <i
+                  onClick={() => getLikedVideo(playVideo)}
+                  className="fa fa-thumbs-up likesicon"
+                  aria-hidden="true"
+                >
+                   Likes
+                </i>
+              )}
+              {WatchLaterVideos.some((data) => data.id === playVideo.id) ? (
+                <i
+                  onClick={() => removeWatchVideo(playVideo.id)}
+                  style={{ color: "red" }}
+                  class="fas fa-clock watch-later-btn"
+                >
+                   Remove from Watch Later
+                </i>
+              ) : (
+                <i
+                  onClick={() => getWatchLaterVideo(playVideo)}
+                  class="fas fa-clock watch-later-btn font-18p"
+                >
+                  {" "}
+                  Watch later
+                </i>
+              )}
               <i className="fas fa-folder-plus"> Add to Playlist</i>
             </div>
           </div>
           <hr></hr>
-          <div className="img-creator margin-1r gap-8p flex">
-            <div>
+          <section className="img-creator margin-1r gap-8p flex">
+            <section>
               <img src={playVideo.img} className="badge-img" alt="img" />
-            </div>
-            <div>
+            </section>
+            <section>
               <h3>{playVideo.creator}</h3>
               <p className="description font-18p">
                 Description : - {playVideo.description}
               </p>
-            </div>
-          </div>
+            </section>
+          </section>
         </div>
-        <div>
-          <h2 className="Suggestions-heading text-align margin-8p ">Suggestions Video</h2>
+        <section>
+          <h2 className="Suggestions-heading text-align margin-8p ">
+            Suggestions Video
+          </h2>
           {video.map((item) =>
             playVideo.genre === item.genre ? <Videos data={item} /> : ""
           )}
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   );
 };
 

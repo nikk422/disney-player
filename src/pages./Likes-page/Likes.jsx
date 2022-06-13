@@ -1,0 +1,44 @@
+// import { useFeatures } from "../../Context/features-context";
+import Videos from "../Videos./Videos";
+import Sidebar from "../../Componant/SideBar/SideBar";
+import "./likes.css";
+import Navbar from "../../Componant/Navbar/Navbar";
+import { useLikes } from "../../Context/Features-page/Likes-context";
+
+const Likes = () => {
+  
+
+
+   const {LikeVideos ,removeLikeVideo}=useLikes()
+  return (
+    <main>
+      <Navbar />
+      <div className="Likes-container gap-5p">
+        <section>
+          <Sidebar />
+        </section>
+        <div>
+          {LikeVideos.length !== 0 ? (
+            <div>
+              <h2 className="likes-heading">Likes Video</h2>
+              <section className="likes-video-contain flex flex-wrap gap-8p margin-top-32p">
+                {LikeVideos.map((likeVideo) => (
+                  <section className="positon-relative">
+                    <Videos data={likeVideo} />
+                    <i
+                    onClick={()=>removeLikeVideo(likeVideo.id)}
+                      className="fas fa-trash solid trash-icon font-18p"
+                    ></i>
+                  </section>
+                ))}
+              </section>
+            </div>
+          ) : (
+            <h2 className="likes-heading text-align margin-top-16p">Likes is Empty</h2>
+          )}
+        </div>
+      </div>
+    </main>
+  );
+};
+export default Likes;

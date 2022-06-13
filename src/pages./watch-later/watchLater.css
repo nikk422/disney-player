@@ -1,0 +1,7 @@
+.WatchLater-container{
+    display: grid;
+    grid-template-columns: 12.5rem 1fr;
+    color:var(--full-white);
+    font-family: 'Playfair Display SC', serif;
+}
+
