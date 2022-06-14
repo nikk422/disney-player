@@ -7,6 +7,7 @@ const FilterProvider = ({ children }) => {
 
   const [VideoState, VideoDispatch] = useReducer(ReducerFunc, {
     videosFilter: "ALL",
+    showIcon:"",
   });
 
   return (

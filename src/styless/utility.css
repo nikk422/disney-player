@@ -32,6 +32,10 @@
 .justify-around {
     justify-content: space-around;
 }
+.justify-evenly{
+    justify-content: space-evenly;
+
+}
 
 .align-center {
     align-items: center;
@@ -95,6 +99,9 @@
 
 .margin-top-16p{
     margin-top: 1rem;
+}
+.margin-top-8p{
+    margin-top: 0.5rem;
 }
 .margin-2r{
     margin: 2rem;

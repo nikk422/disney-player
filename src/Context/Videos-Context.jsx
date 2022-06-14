@@ -7,17 +7,30 @@ const VideosProvider = ({ children }) => {
   const [video, setVideo] = useState([]);
   const [loader, setLoader] = useState(false);
 
-  useEffect(() => {
-    (async () => {
+  // useEffect(() => {
+  //   (async () => {
+  //     setLoader(true);
+  //     const res = await axios.get("api/videos");
+  //     setLoader(false);
+  //     setVideo(res.data.videos);
+  //   })()
+  // }, []);
+
+  const getVideos=async()=>{
+    try {
       setLoader(true);
-      const res = await axios.get("api/videos");
+      const res= await axios.get("/api/videos")
       setLoader(false);
-      setVideo(res.data.videos);
-    })()
-  }, []);
+      console.log(res.data.videos,"vbbbbbbbbbbbbb")
+      setVideo(res.data.videos)
+      
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
-    <VideoContext.Provider value={{ video, loader, setVideo, setLoader }}>
+    <VideoContext.Provider value={{ video, loader, setVideo, setLoader,getVideos }}>
       {children}
     </VideoContext.Provider>
   );

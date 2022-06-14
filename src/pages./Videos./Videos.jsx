@@ -2,16 +2,31 @@ import { useVideos } from "../../Context/Videos-Context";
 import { useFilter } from "../../Context/Filter-context";
 import { Link } from "react-router-dom";
 import "./videos.css";
+import {useState, useEffect} from "react";
 import { FaEllipsisV } from "react-icons/fa";
 import { useHistory } from "../../Context/Features-page/History-context";
+import { usePlaylist } from "../../Context/Features-page/Playlist-context";
+import { useWatchlater } from "../../Context/Features-page/WatchLater-context";
+import PlaylistModel from "../../Componant/Playlsit-model/Playlist-Model";
+
 
 const Videos = ({ data }) => {
-  const { video, loader } = useVideos();
+  const { video, loader,getVideos } = useVideos();
   const { getHistoryVideo } = useHistory();
 
+
+
+  useEffect(() => {
+    getVideos()
+  },[])
+
+
   const {
-    VideoState: { videosFilter },
+    VideoState: { videosFilter,showIcon },VideoDispatch
   } = useFilter();
+
+  const { showModel, setShowModel, showShare, setShowShare } = usePlaylist();
+  const {WatchLaterVideos,getWatchLaterVideo,removeWatchVideo}= useWatchlater()
 
   let filteredArray = video.filter((item) => item.genre === videosFilter);
 
@@ -21,6 +36,9 @@ const Videos = ({ data }) => {
   if (data !== undefined) {
     filteredArray = [data];
   }
+
+  const [playlistVideoArry, setPlaylistVideoArray]=useState()
+
 
   return (
     <main>
@@ -39,7 +57,7 @@ const Videos = ({ data }) => {
                 </div>
               </section>
             </Link>
-            <section className="about-video flex-justify-between positon-relative">
+            <section className="about-video  positon-relative flex justify-evenly">
               <img src={item.img} className="badge-img" alt="img" />
 
               <section className="video-detail">
@@ -51,13 +69,58 @@ const Videos = ({ data }) => {
               </section>
 
               <section>
-                <i>
+                <i onClick={() => {
+                    return (
+                      VideoDispatch({ type: "SHOW_ICON", payload: item }),
+                      setShowShare(showShare ? false : true)
+                    );
+                  }}>
                   <FaEllipsisV />
                 </i>
               </section>
+              {item.id === showIcon && showShare ? (
+                <div className="showIcon">
+                  <div className="showIcon-contain flex-column gap-8p margin-8p">
+                    {WatchLaterVideos.some((data) => data.id === item.id) ? (
+                      <i
+                        onClick={() =>removeWatchVideo(item.id)
+                        }
+                        style={{color:"red"}}
+                        className="fas fa-clock watch-later-btn"
+                      >
+                        Remove from Watch Later
+                      </i>
+                    ) : (
+                      <i
+                        onClick={() =>getWatchLaterVideo(item)
+                        }
+                        className="fas fa-clock watch-later-btn"
+                      >
+                        Save to Watch Later
+                      </i>
+                    )}
+                    <i
+                      onClick={() => {
+                        return (
+                          setShowModel(!showModel),
+                          setPlaylistVideoArray(item),
+                          setShowShare(!showShare)
+                        );
+                      }}
+                      className="fas fa-folder-plus"
+                    >
+                      Add to Playlist
+                    </i>
+                  </div>
+                </div>
+              ) : (
+                ""
+              )}
             </section>
           </section>
         ))}
+        {showModel && ( <PlaylistModel data={playlistVideoArry}/>
+        )}
       </div>
     </main>
   );

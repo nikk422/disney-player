@@ -4,6 +4,8 @@ import Sidebar from "../../Componant/SideBar/SideBar";
 import "./watchLater.css";
 import Navbar from "../../Componant/Navbar/Navbar";
 import { useWatchlater } from "../../Context/Features-page/WatchLater-context";
+import VideoCard from "../../Componant/Video-Card/VideoCard";
+
 
 const WatchLater = () => {
   const { WatchLaterVideos,removeWatchVideo } = useWatchlater();
@@ -22,8 +24,8 @@ const WatchLater = () => {
               <div className="WatchLater-video flex flex-wrap gap-8p margin-top-32p">
                 {WatchLaterVideos.map((watchVideo) => (
                   <div className="positon-relative">
-                    <Videos data={watchVideo} />
-                    <i
+                  <VideoCard data={watchVideo} />                    
+                  <i
                     onClick={()=>removeWatchVideo(watchVideo.id)}
                       className="fas fa-trash solid trash-icon font-18p"
                     ></i>
