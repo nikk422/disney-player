@@ -1,0 +1,26 @@
+.playlist-container{
+    display: grid;
+    grid-template-columns: 12.5rem 1fr 21.5rem;
+    color:var(--full-white);
+    font-family: 'Playfair Display SC', serif;
+}
+.playlist-video-contain{
+    width: 20rem;
+    height: 25vh;
+    border: 2px solid var(--full-white);
+}
+
+.playlist-name{
+    color:var(--full-white);
+
+}
+
+.see-heading{
+    color:var(--full-white);
+}
+
+.trash-icon-play{
+    position: absolute;
+    right:1rem;
+    top:10rem;
+}

@@ -1,9 +1,9 @@
-// import { useFeatures } from "../../Context/features-context";
-import Videos from "../Videos./Videos";
 import Sidebar from "../../Componant/SideBar/SideBar";
 import "./history.css";
 import Navbar from "../../Componant/Navbar/Navbar";
 import {useHistory} from "../../Context/Features-page/History-context";
+import VideoCard from "../../Componant/Video-Card/VideoCard";
+
 
 const History = () => {
  const {historyVideos,removeHistory,clearAllHistory}=useHistory()
@@ -29,7 +29,7 @@ const History = () => {
               <section className="history-video-contain flex flex-wrap gap-8p margin-top-32p">
                 {historyVideos.map((historyVideo) => (
                   <div className="positon-relative">
-                    <Videos data={historyVideo} />
+                  <VideoCard data={historyVideo} />                    
                     <i
                     onClick={()=>removeHistory(historyVideo.id)}
                       className="fas fa-trash solid trash-icon font-18p"

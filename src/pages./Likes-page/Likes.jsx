@@ -1,9 +1,9 @@
-// import { useFeatures } from "../../Context/features-context";
-import Videos from "../Videos./Videos";
 import Sidebar from "../../Componant/SideBar/SideBar";
 import "./likes.css";
 import Navbar from "../../Componant/Navbar/Navbar";
 import { useLikes } from "../../Context/Features-page/Likes-context";
+import VideoCard from "../../Componant/Video-Card/VideoCard";
+
 
 const Likes = () => {
   
@@ -24,8 +24,8 @@ const Likes = () => {
               <section className="likes-video-contain flex flex-wrap gap-8p margin-top-32p">
                 {LikeVideos.map((likeVideo) => (
                   <section className="positon-relative">
-                    <Videos data={likeVideo} />
-                    <i
+                  <VideoCard data={likeVideo} />                    
+                   <i
                     onClick={()=>removeLikeVideo(likeVideo.id)}
                       className="fas fa-trash solid trash-icon font-18p"
                     ></i>

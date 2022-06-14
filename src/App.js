@@ -13,6 +13,8 @@ import RequireAuth from "./PrivateAuth/RequireAuth";
 import Login from "./pages./Authentication/Login/login";
 import Signup from "./pages./Authentication/Signup/SignUp";
 import Logout from "./pages./Authentication/Logout-page/Logout";
+import Playlist from "./pages./playlist/Playlist";
+import PlaylistVideo from "./pages./playlist/playlistVideo/PlayVideos";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/logout" element={<Logout />} />
+        <Route path="/playlistVideo/:playlistId" element={<PlaylistVideo />} />
+
 
         <Route
           path="/likes"
@@ -48,6 +52,14 @@ function App() {
           element={
             <RequireAuth>
               <History />
+            </RequireAuth>
+          }
+        />
+         <Route
+          path="/playlist"
+          element={
+            <RequireAuth>
+              <Playlist />
             </RequireAuth>
           }
         />
