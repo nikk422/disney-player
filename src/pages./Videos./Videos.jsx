@@ -11,14 +11,8 @@ import PlaylistModel from "../../Componant/Playlsit-model/Playlist-Model";
 
 
 const Videos = ({ data }) => {
-  const { video, loader,getVideos } = useVideos();
+  const { video } = useVideos();
   const { getHistoryVideo } = useHistory();
-
-
-
-  useEffect(() => {
-    getVideos()
-  },[])
 
 
   const {
@@ -43,7 +37,6 @@ const Videos = ({ data }) => {
   return (
     <main>
       <div className="videolist-contain flex gap-10px flex-wrap positon-relative">
-        {loader && <h2>loading....</h2>}
         {filteredArray.map((item) => (
           <section className="videos-detail padding-4px gap-8p flex-column positon-relative">
             <Link to={`/singleVideo/${item.id}`}>

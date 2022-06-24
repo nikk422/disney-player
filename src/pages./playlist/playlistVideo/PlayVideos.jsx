@@ -11,6 +11,7 @@ const PlaylistVideo = () => {
     usePlaylist();
 
   let getPlaylist = { videos: [] };
+  
   useEffect(() => {
     getPlaylistVideo();
   }, []);
