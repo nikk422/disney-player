@@ -1,5 +1,7 @@
-import { useContext, createContext, useState, useEffect } from "react";
+import { useContext, createContext, useState } from "react";
 import axios from "axios";
+import {  toast } from 'react-toastify';
+
 
 const PlaylistContext = createContext();
 
@@ -21,8 +23,9 @@ const PlaylistProvider = ({ children }) => {
         }
       );
       setPlaylist(res.data.playlists);
+      toast.success("Create New Playlist...")
     } catch (error) {
-      console.log(error);
+      toast.error("Please Logged in ...")
     }
   };
 
@@ -35,6 +38,7 @@ const PlaylistProvider = ({ children }) => {
           headers: { authorization: localStorage.getItem("authToken") },
         }
       );
+      toast.success("Added video in playlist...")
     } catch (error) {
     }
   };
@@ -56,6 +60,7 @@ const PlaylistProvider = ({ children }) => {
           headers: { authorization: localStorage.getItem("authToken")}
         })
         setPlaylist(res.data.playlists)
+        toast.success("Remove playlist...")
       } catch (error) {
         console.log(error)
         
@@ -67,8 +72,8 @@ const PlaylistProvider = ({ children }) => {
         const res= await axios.delete(`/api/user/playlists/${playlistId}/${videoId}`,{
           headers: { authorization: localStorage.getItem("authToken")}
         })
-        console.log(res.data,"::::::::::::+++");
         setPlaylistVideo(res.data.playlists)
+        toast.success("Remove video From Playlist...")
         
       } catch (error) {
         

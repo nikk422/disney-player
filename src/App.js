@@ -15,6 +15,9 @@ import Signup from "./pages./Authentication/Signup/SignUp";
 import Logout from "./pages./Authentication/Logout-page/Logout";
 import Playlist from "./pages./playlist/Playlist";
 import PlaylistVideo from "./pages./playlist/playlistVideo/PlayVideos";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   return (
@@ -64,6 +67,7 @@ function App() {
           }
         />
       </Routes>
+      <ToastContainer/>
     </div>
   );
 }

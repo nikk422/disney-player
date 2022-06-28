@@ -1,5 +1,7 @@
 import { useContext, createContext, useState } from "react";
 import axios from "axios";
+import {  toast } from 'react-toastify';
+
 
 
 const WatchLaterContext = createContext();
@@ -17,8 +19,10 @@ const WatchlaterProvider = ({ children }) => {
         }
       );
       setWatchLaterVideos(res.data.watchlater);
+      toast.success("Video Added in WatchLater..")
     } catch (error) {
-      console.log(error);
+      toast.error("Please Logged in ..")
+
     }
   };
 
@@ -28,6 +32,8 @@ const WatchlaterProvider = ({ children }) => {
               headers: {authorization: localStorage.getItem("authToken")}
           })
           setWatchLaterVideos(res.data.watchlater);
+          toast.info("Remove From WatchLater ..")
+
       } catch (error) {
           console.log(error)
       }

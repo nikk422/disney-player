@@ -1,5 +1,8 @@
 import { useContext, createContext, useState } from "react";
 import axios from "axios";
+import {  toast } from 'react-toastify';
+
+
 
 const HistoryContext = createContext();
 
@@ -16,9 +19,8 @@ const HistoryProvider = ({ children }) => {
         }
       );
       setHistoryVideos(res.data.history);
-    console.log(res.data.history,"histoy")
     } catch (error) {
-      console.log(error);
+      toast.error("Please Logged in ..")
     }
   };
 
@@ -28,8 +30,8 @@ const HistoryProvider = ({ children }) => {
           const res=  await axios.delete(`/api/user/history/${historyVideo}`,{
               headers: { authorization: localStorage.getItem("authToken") }
           })
-          console.log(res.data.history);
           setHistoryVideos(res.data.history)
+          toast.info("Remove From History ..")
           
       } catch (error) {
           console.log(error);
@@ -45,6 +47,8 @@ const HistoryProvider = ({ children }) => {
         headers:{ authorization: localStorage.getItem("authToken")}
       })
       setHistoryVideos(res.data.history,"clear")
+      toast.error("Clear All History ..")
+
       
     } catch (error) {
       console.log(error) 

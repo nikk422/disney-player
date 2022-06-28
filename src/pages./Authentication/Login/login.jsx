@@ -4,6 +4,8 @@ import "./login.css";
 import { Link } from "react-router-dom";
 import Navbar from "../../../Componant/Navbar/Navbar";
 import axios from 'axios';
+import {  toast } from 'react-toastify';
+
 
 const Login = () => {
   const { setLogin,setIsStatus } = useAuth();
@@ -11,22 +13,23 @@ const Login = () => {
   const navigate = useNavigate();
 
   const loginHandler = () => {
-    setIsStatus(true)
     setLogin((Login) => !Login);
-    navigate(location.state.from.pathname);
-   
-    
+    navigate(location.state.from.pathname); 
   };
   const clickHandler = async()=>{
     try{
       const res = await axios.post("/api/auth/login", {
-        email: "adarshbalika@gmail.com",
-        password: "adarshBalika123"
+        email: "nikmalviya422@gmail.com",
+        password: "nikhil@123"
       })
       localStorage.setItem("authToken", res.data.encodedToken)
-      console.log(res.data)
+      toast.success("Login is successfully! Click the Login as a Guest",{
+        position:"top-right"
+      });
+      setIsStatus(true)
+     
     }catch(err){
-      console.log(err.message)
+      console.log(err)
     }
   }
 
