@@ -76,8 +76,11 @@ const Videos = ({ data }) => {
                   <div className="showIcon-contain flex-column gap-8p margin-8p">
                     {WatchLaterVideos.some((data) => data.id === item.id) ? (
                       <i
-                        onClick={() =>removeWatchVideo(item.id)
-                        }
+                        onClick={() =>{ return (
+                        removeWatchVideo(item.id)
+                        ),
+                         setShowShare(!showShare)
+                        }}
                         style={{color:"red"}}
                         className="fas fa-clock watch-later-btn"
                       >
@@ -85,8 +88,9 @@ const Videos = ({ data }) => {
                       </i>
                     ) : (
                       <i
-                        onClick={() =>getWatchLaterVideo(item)
-                        }
+                        onClick={() =>{ return (
+                        getWatchLaterVideo(item)
+                        ),setShowShare(!showShare)}}
                         className="fas fa-clock watch-later-btn"
                       >
                         Save to Watch Later
