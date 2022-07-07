@@ -3,15 +3,14 @@
 .videolist-contain{
     margin-left:0.5rem;
     font-family: 'Playfair Display SC', serif;
+    padding:0.6
 }
 .video-img{
     width:19rem;
-
 }
 
 .videos-detail{
     margin:1rem 0.2rem 1rem 0;
-
 }
 
 .videos-detail:hover{
@@ -21,7 +20,6 @@
 
 .about-video{
     padding-top:0.5rem;
-
 }
 
 .badge-img{
@@ -46,7 +44,7 @@
     width: fit-content;
     background-color:var(--full-white);
     height: fit-content;
-    position: absolute;
+    position: fixed;
     top:25rem;
     left:40rem;
     transform: translate(-50%,-50%);

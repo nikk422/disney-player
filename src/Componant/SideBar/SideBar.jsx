@@ -45,7 +45,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar-container flex padding-22px position-sticky-6r z-index-1">
       <aside className="lib-sidebar font-18p">
-        <ul>
+        <ul className="icon-list">
           {sidebarPages.map(({ page, icon, link }) => (
             <Link to={`${link}`}>
               <li className="hoverText">

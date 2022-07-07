@@ -11,7 +11,7 @@ const PlaylistVideo = () => {
     usePlaylist();
 
   let getPlaylist = { videos: [] };
-  
+
   useEffect(() => {
     getPlaylistVideo();
   }, []);
@@ -34,7 +34,7 @@ const PlaylistVideo = () => {
           <Sidebar />
         </aside>
         {getPlaylist !== undefined ? (
-          <section className="playlistVideo-section flex gap-2r margin-top-8p">
+          <section className="playlist-video flex  margin-top-8p">
             {getPlaylist.videos.map((item) => (
               <section className="positon-relative">
                 <VideoCard data={item} />
@@ -46,7 +46,7 @@ const PlaylistVideo = () => {
             ))}
           </section>
         ) : (
-          <h1>There is no videos</h1>
+          <h1 className="text-align">There is no videos</h1>
         )}
       </div>
     </main>

@@ -2,25 +2,25 @@ import { useVideos } from "../../Context/Videos-Context";
 import { useFilter } from "../../Context/Filter-context";
 import { Link } from "react-router-dom";
 import "./videos.css";
-import {useState, useEffect} from "react";
+import { useState } from "react";
 import { FaEllipsisV } from "react-icons/fa";
 import { useHistory } from "../../Context/Features-page/History-context";
 import { usePlaylist } from "../../Context/Features-page/Playlist-context";
 import { useWatchlater } from "../../Context/Features-page/WatchLater-context";
 import PlaylistModel from "../../Componant/Playlsit-model/Playlist-Model";
 
-
 const Videos = ({ data }) => {
   const { video } = useVideos();
   const { getHistoryVideo } = useHistory();
 
-
   const {
-    VideoState: { videosFilter,showIcon },VideoDispatch
+    VideoState: { videosFilter, showIcon },
+    VideoDispatch,
   } = useFilter();
 
   const { showModel, setShowModel, showShare, setShowShare } = usePlaylist();
-  const {WatchLaterVideos,getWatchLaterVideo,removeWatchVideo}= useWatchlater()
+  const { WatchLaterVideos, getWatchLaterVideo, removeWatchVideo } =
+    useWatchlater();
 
   let filteredArray = video.filter((item) => item.genre === videosFilter);
 
@@ -31,8 +31,7 @@ const Videos = ({ data }) => {
     filteredArray = [data];
   }
 
-  const [playlistVideoArry, setPlaylistVideoArray]=useState()
-
+  const [playlistVideoArry, setPlaylistVideoArray] = useState();
 
   return (
     <main>
@@ -50,24 +49,28 @@ const Videos = ({ data }) => {
                 </div>
               </section>
             </Link>
-            <section className="about-video  positon-relative flex justify-evenly">
-              <img src={item.img} className="badge-img" alt="img" />
+            <section className="about-video  positon-relative flex justify-between">
+              <div className="badge-title flex gap-10px ">
+                <img src={item.img} className="badge-img" alt="img" />
 
-              <section className="video-detail">
-                <h4>{item.title}</h4>
-                <p>{item.creator}</p>
-                <p>
-                  {item.views} views . <span>{item.release}</span>
-                </p>
-              </section>
+                <section className="video-detail">
+                  <h4>{item.title}</h4>
+                  <p>{item.creator}</p>
+                  <p>
+                    {item.views} views . <span>{item.release}</span>
+                  </p>
+                </section>
+              </div>
 
               <section>
-                <i onClick={() => {
+                <i
+                  onClick={() => {
                     return (
                       VideoDispatch({ type: "SHOW_ICON", payload: item }),
                       setShowShare(showShare ? false : true)
                     );
-                  }}>
+                  }}
+                >
                   <FaEllipsisV />
                 </i>
               </section>
@@ -76,21 +79,23 @@ const Videos = ({ data }) => {
                   <div className="showIcon-contain flex-column gap-8p margin-8p">
                     {WatchLaterVideos.some((data) => data.id === item.id) ? (
                       <i
-                        onClick={() =>{ return (
-                        removeWatchVideo(item.id)
-                        ),
-                         setShowShare(!showShare)
+                        onClick={() => {
+                          return (
+                            removeWatchVideo(item.id), setShowShare(!showShare)
+                          );
                         }}
-                        style={{color:"red"}}
+                        style={{ color: "red" }}
                         className="fas fa-clock watch-later-btn"
                       >
                         Remove from Watch Later
                       </i>
                     ) : (
                       <i
-                        onClick={() =>{ return (
-                        getWatchLaterVideo(item)
-                        ),setShowShare(!showShare)}}
+                        onClick={() => {
+                          return (
+                            getWatchLaterVideo(item), setShowShare(!showShare)
+                          );
+                        }}
                         className="fas fa-clock watch-later-btn"
                       >
                         Save to Watch Later
@@ -116,8 +121,7 @@ const Videos = ({ data }) => {
             </section>
           </section>
         ))}
-        {showModel && ( <PlaylistModel data={playlistVideoArry}/>
-        )}
+        {showModel && <PlaylistModel data={playlistVideoArry} />}
       </div>
     </main>
   );

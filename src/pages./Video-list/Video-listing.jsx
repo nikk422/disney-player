@@ -15,10 +15,14 @@ const VideoListing = () => {
         <aside>
           <Sidebar />
         </aside>
-        {loader && <h2 className="loader"></h2>}
         <section>
           <GenreFilter />
           <div className="All-videos">
+            {loader && (
+              <div className="loader-container">
+                <div className="loader"></div>
+              </div>
+            )}
             <Videos />
           </div>
         </section>

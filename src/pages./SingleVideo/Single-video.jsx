@@ -22,7 +22,6 @@ const SingleVideo = () => {
 
   const playVideo = video.find((play) => play.id === VideoId);
 
-
   return (
     <main>
       <Navbar />
@@ -30,8 +29,12 @@ const SingleVideo = () => {
         <aside>
           <Sidebar />
         </aside>
-        {loader && <h2 className="loader"></h2>}
-        {video[0] !== undefined  ? (
+        {loader && (
+          <div className="loader-container">
+            <div className="loader"></div>
+          </div>
+        )}
+        {video[0] !== undefined ? (
           <div className="iframe-container margin-top-22p">
             <iframe
               width="950px"
@@ -46,7 +49,7 @@ const SingleVideo = () => {
               <p>
                 {playVideo.views} views. <span> {playVideo.release}</span>
               </p>
-              <div className="single-video-detail font-18p flex gap-3r">
+              <div className="single-video-detail font-18p flex gap-1r">
                 {LikeVideos.some((data) => data.id === playVideo.id) ? (
                   <i
                     onClick={() => {
@@ -55,42 +58,30 @@ const SingleVideo = () => {
                     style={{ color: "red" }}
                     className="fa fa-thumbs-up "
                     aria-hidden="true"
-                  >
-                    DisLike
-                  </i>
+                  ></i>
                 ) : (
                   <i
                     onClick={() => getLikedVideo(playVideo)}
                     className="fa fa-thumbs-up likesicon"
                     aria-hidden="true"
-                  >
-                    Likes
-                  </i>
+                  ></i>
                 )}
                 {WatchLaterVideos.some((data) => data.id === playVideo.id) ? (
                   <i
                     onClick={() => removeWatchVideo(playVideo.id)}
                     style={{ color: "red" }}
                     class="fas fa-clock watch-later-btn"
-                  >
-                    Remove from Watch Later
-                  </i>
+                  ></i>
                 ) : (
                   <i
                     onClick={() => getWatchLaterVideo(playVideo)}
                     class="fas fa-clock watch-later-btn font-18p"
-                  >
-                    {" "}
-                    Watch later
-                  </i>
+                  ></i>
                 )}
                 <i
                   onClick={() => setShowModel(!showModel)}
                   className="fas fa-folder-plus"
-                >
-                  {" "}
-                  Add to Playlist
-                </i>
+                ></i>
               </div>
             </div>
 

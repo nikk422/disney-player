@@ -8,10 +8,9 @@ const Genre = () => {
   const { VideoDispatch } = useFilter();
 
   return (
-    <main className="genre-container flex-justify-between flex-wrap gap-1r margin-1r">
-    
+    <main className="genre-container">
       {genre.map((item) => (
-        <section className="genre-contain flex-column align-center gap-8p padding-4px ">
+        <section className="genre-contain flex-column  align-center gap-8p padding-4px ">
           <Link to="videoListing">
             <button
               onClick={() =>

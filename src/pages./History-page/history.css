@@ -3,14 +3,18 @@
     grid-template-columns: 12.5rem 1fr;
     color: var(--full-white);
     font-family: 'Playfair Display SC', serif;
+    min-height: 86vh;
+}
 
+.history-video-contain{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
 }
 
 .clearBtn {
     background-color: rgb(7 89 133);
     color: var(--full-white);
     font-weight: bold;
-
 }
 
 .history-video {
@@ -18,8 +22,6 @@
 }
 
 
-.trash-icon {
-    position: absolute;
-    right: 1rem;
-    bottom:6.5rem;
-}
+
+
+
