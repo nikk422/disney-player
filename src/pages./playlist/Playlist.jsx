@@ -10,13 +10,13 @@ const Playlist = () => {
   return (
     <main>
       <Navbar />
-      <div className="playlist-container gap-18p">
+      <div className="playlist-container">
         <aside>
           <Sidebar />
         </aside>
-        <div>
+        <div className="playlist-contain">
           {playlist.length !== 0 ? (
-            <section className="playlist-video flex margin-top-8p">
+            <section className="playlist-video ">
               {playlist.map((item) => (
                 <section className="playlist-video-contain flex-column justify-between text-align gap-8p">
                   <Link to={`/playlistVideo/${item._id}`}>
@@ -36,7 +36,6 @@ const Playlist = () => {
             </section>
           ) : (
             <h2 className="WatchLater-heading text-align margin-top-16p">
-              {" "}
               Playlist is Empty
             </h2>
           )}

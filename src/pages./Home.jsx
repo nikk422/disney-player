@@ -14,7 +14,7 @@ const HomePage = () => {
           src="https://secure-media.hotstarext.com/web-assets/prod/images/brand-logos/disney-hotstar-logo-dark.svg"
           alt="Disney+;Hotstar"
         ></img>
-        <section>
+        <section className="genre-sec">
           <Genre />
         </section>
         <Link to="/videoListing">

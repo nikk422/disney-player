@@ -1,26 +1,37 @@
-.playlist-container{
+.playlist-container {
     display: grid;
-    grid-template-columns: 12.5rem 1fr 21.5rem;
-    color:var(--full-white);
+    grid-template-columns: 12.5rem 1fr;
+    color: var(--full-white);
     font-family: 'Playfair Display SC', serif;
+    min-height: 86vh; 
 }
-.playlist-video-contain{
-    width: 20rem;
+
+.playlist-video-contain {
     height: 25vh;
     border: 2px solid var(--full-white);
 }
 
-.playlist-name{
-    color:var(--full-white);
+.playlist-video {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:1rem;
+    padding:0.5rem;
+    min-height:84vh;
+}
+
+.playlist-name {
+    color: var(--full-white);
 
 }
 
-.see-heading{
-    color:var(--full-white);
+.see-heading {
+    color: var(--full-white);
 }
 
-.trash-icon-play{
+.trash-icon-play {
     position: absolute;
-    right:1rem;
-    top:10rem;
+    right: 1.5rem;
+    top: 10rem;
 }
+
+

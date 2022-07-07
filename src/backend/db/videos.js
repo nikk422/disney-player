@@ -99,7 +99,7 @@ export const videos = [
   },
   {
     id: "gMJFzXZ103Y",
-    title: "TUM BIN Full Video Song|SANAM RE",
+    title: "TUM BIN Full Video Song|",
     description: "TUM BIN Full Video Song | SANAM RE | Pulkit Samrat, Yami Gautam, Divya Khosla Kumar | T-Series",
     creator: "T-SERIES",
     views: "100M",

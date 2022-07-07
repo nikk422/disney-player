@@ -1,7 +1,3 @@
-.genre-list {
-    margin: 1rem 0rem 1rem 0rem;
-
-}
 
 .genreChips-container {
     background-color: var(--black-1000);
@@ -13,7 +9,6 @@
     font-weight: bold;
     background-image: var(--linear-color);
     color: var(--full-white);
-
 }
 
 .genre-btn:focus {

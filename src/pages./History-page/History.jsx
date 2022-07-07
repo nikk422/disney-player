@@ -1,12 +1,11 @@
 import Sidebar from "../../Componant/SideBar/SideBar";
 import "./history.css";
 import Navbar from "../../Componant/Navbar/Navbar";
-import {useHistory} from "../../Context/Features-page/History-context";
+import { useHistory } from "../../Context/Features-page/History-context";
 import VideoCard from "../../Componant/Video-Card/VideoCard";
 
-
 const History = () => {
- const {historyVideos,removeHistory,clearAllHistory}=useHistory()
+  const { historyVideos, removeHistory, clearAllHistory } = useHistory();
   return (
     <main>
       <Navbar />
@@ -21,25 +20,28 @@ const History = () => {
                 <h3 className="history-heading">Watch history</h3>
                 <button
                   className="clearBtn font-16p padding-2px"
-                  onClick={()=>clearAllHistory()}
+                  onClick={() => clearAllHistory()}
                 >
                   Clear all history
                 </button>
               </section>
-              <section className="history-video-contain flex flex-wrap gap-8p margin-top-32p">
+              <section className="history-video-contain gap-8p margin-top-32p">
                 {historyVideos.map((historyVideo) => (
                   <div className="positon-relative">
-                  <VideoCard data={historyVideo} />                    
+                    <VideoCard data={historyVideo} />
                     <i
-                    onClick={()=>removeHistory(historyVideo.id)}
-                      className="fas fa-trash solid trash-icon font-18p"
+                      onClick={() => removeHistory(historyVideo.id)}
+                      className="fas fa-trash solid trash-icon-play font-18p"
                     ></i>
                   </div>
                 ))}
               </section>
             </div>
           ) : (
-            <h2 className="history-heading text-align margin-top-16p"> History is Empty</h2>
+            <h2 className="history-heading text-align margin-top-16p">
+              {" "}
+              History is Empty
+            </h2>
           )}
         </section>
       </section>

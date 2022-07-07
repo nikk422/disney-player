@@ -1,6 +1,6 @@
 .cateImg{
     width:16.5rem;
-    height:29vh; 
+    height:29vh;
     border-radius: 0.5rem; 
 }
 
@@ -13,3 +13,11 @@
     transition: .5s;
 
 }
+
+.genre-container{
+    display:grid ;
+    grid-template-columns: repeat(5, 1fr) ;   
+    gap:1.2rem; 
+}
+
+

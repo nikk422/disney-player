@@ -49,8 +49,14 @@
 .gap-8p{
     gap:0.5rem;
 }
+.gap-9p{
+    gap:0.3rem
+}
 .gap-10px{
     gap:0.7rem;
+}
+.gap-14p{
+    gap:0.9rem;
 }
 .gap-1r{
     gap:1rem;
@@ -151,4 +157,6 @@
 .z-index-1{
     z-index: 1;
 }
+
+
 

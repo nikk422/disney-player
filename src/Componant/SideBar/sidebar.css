@@ -23,9 +23,3 @@
     text-decoration-color:var(--black-1000);
 }
 
-
-@media screen and (max-width: 641px) {
-    body {
-      font-size:0.7rem;
-    }
-  }

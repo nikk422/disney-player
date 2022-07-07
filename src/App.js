@@ -67,7 +67,11 @@ function App() {
           }
         />
       </Routes>
-      <ToastContainer/>
+      <ToastContainer className="toast-container" 
+        position="top-right"
+        autoClose={2000}
+        pauseOnHover={false}
+      />
     </div>
   );
 }

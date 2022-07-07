@@ -1,24 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Cookie&family=Libre+Bodoni:ital@1&family=Permanent+Marker&family=Roboto+Slab&family=Rubik+Wet+Paint&family=Satisfy&family=Shadows+Into+Light&family=Tapestry&display=swap');
 
-.navbar-container{
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
     background-image: var(--linear-color);
-    color:var(--wheat-200);
-    border-bottom:2px solid var(--purple-700);
+    color: var(--wheat-200);
+    border-bottom: 2px solid var(--purple-700);
     font-family: 'Libre Bodoni', serif;
     z-index: 1;
 }
 
-.brand-logo{
-    width: 8.53rem;
+.navbar-container section:nth-child(1) {
+    grid-area: logo;
+    width: fit-content;
 }
 
-.Search-box{
-    width:22rem;
+.navbar-container section:nth-child(2) {
+    grid-area: search;
+}
+
+.navbar-container section:nth-child(3) {
+    width: fit-content;
+    grid-area: auth;
+}
+
+.brand-logo {
+    width: 8.53rem;
+    margin-top: -0.5rem;
+}
+
+.Search-box {
+    width: 22rem;
     border: none;
     outline: none;
     border: 3px solid var(--grey-100);
 }
 
-.loginIcon{
-    color:var(--full-white);
+.loginIcon {
+    color: var(--full-white);
 }
