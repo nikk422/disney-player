@@ -1,7 +1,7 @@
 
 .home-container {
     background-image: var(--linear-color);
-    height:86.7vh; 
+    height:86.65vh; 
     font-family: 'Roboto Slab', serif;
     color:var(--full-white);  
 }

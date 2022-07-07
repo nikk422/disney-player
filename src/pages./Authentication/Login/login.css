@@ -1,6 +1,6 @@
 .auth-container {
     color: var(--full-white);
-    height: 86.7vh;
+    min-height: 86.5vh;
     font-family: 'Roboto Slab', serif;
 }
 

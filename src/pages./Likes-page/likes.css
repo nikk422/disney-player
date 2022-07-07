@@ -3,7 +3,7 @@
     grid-template-columns: 12.5rem 1fr;
     color:var(--full-white);
     font-family: 'Playfair Display SC', serif;
-    min-height: 86vh;
+    min-height: 86vh; 
 }
 
 .likes-video-contain{
