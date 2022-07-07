@@ -35,3 +35,61 @@
 }
 
 
+@media screen and (max-width: 1180px) {
+    .playlist-container {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .trash-icon-play {
+        top: 6rem;
+    }
+
+}
+
+@media screen and (max-width: 985px) {
+    .playlist-video {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding-bottom: 3.5rem;
+    }
+    .trash-icon-play {
+        top: 8rem;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .playlist-video {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+    .trash-icon-play {
+        top: 9.5rem;
+    }
+}
+@media screen and (max-width: 670px) {
+    .trash-icon-play {
+        top: 7.7rem;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .playlist-video {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .trash-icon-play {
+        top: 12rem;
+        right: 2rem;
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .trash-icon-play {
+        top: 10rem;
+        right: 0.8rem;
+        font-size: 1.8rem;
+    }
+
+}

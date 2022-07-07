@@ -59,3 +59,13 @@
 .create-btn{
     width:4.5rem;
 }
+
+@media screen and (max-width: 1180px) {
+
+    .videolist-contain {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding-bottom: 3.5rem;
+    }
+
+}

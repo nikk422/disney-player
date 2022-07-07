@@ -14,3 +14,34 @@
 }
 
 
+@media screen and (max-width: 1180px) {
+    .Likes-container {
+        display: grid;
+        grid-template-columns: 1fr;
+    
+    }
+}
+
+@media screen and (max-width: 985px) {
+    .likes-video-contain {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding-bottom: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .likes-video-contain {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .likes-video-contain {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+

@@ -1,3 +1,4 @@
+@import url(../Video-list/videos.css);
 
 .single-video-container{
     display: grid;
@@ -8,4 +9,14 @@
 
 .Suggestions-heading{
     text-decoration: underline;
+}
+
+
+
+@media screen and (max-width: 1180px) {
+    .single-video-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-bottom: 3.5rem;
+    }
 }

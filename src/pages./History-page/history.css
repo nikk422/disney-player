@@ -9,6 +9,8 @@
 .history-video-contain{
     display: grid;
     grid-template-columns: repeat(4,1fr);
+    min-height:84vh;
+
 }
 
 .clearBtn {
@@ -21,7 +23,34 @@
     position: relative;
 }
 
+@media screen and (max-width: 1180px) {
+    .history-container {
+        display: grid;
+        grid-template-columns: 1fr;
+    
+    }
 
+}
 
+@media screen and (max-width: 985px) {
+    .history-video-contain {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding-bottom: 3.5rem;
+    }
+}
 
+@media screen and (max-width: 850px) {
+    .history-video-contain {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .history-video-contain {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
 

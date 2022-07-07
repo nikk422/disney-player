@@ -50,7 +50,7 @@ const Videos = ({ data }) => {
               </section>
             </Link>
             <section className="about-video  positon-relative flex justify-between">
-              <div className="badge-title flex gap-10px ">
+              <div className="badge-title flex gap-10px">
                 <img src={item.img} className="badge-img" alt="img" />
 
                 <section className="video-detail">
