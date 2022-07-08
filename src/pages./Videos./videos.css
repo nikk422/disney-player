@@ -3,7 +3,8 @@
 .videolist-contain{
     margin-left:0.5rem;
     font-family: 'Playfair Display SC', serif;
-    padding:0.6
+    padding:0.6;
+    min-height: 86vh; 
 }
 .video-img{
     width:19rem;
