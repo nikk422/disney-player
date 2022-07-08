@@ -14,7 +14,7 @@ const Videos = ({ data }) => {
   const { getHistoryVideo } = useHistory();
 
   const {
-    VideoState: { videosFilter, showIcon },
+    VideoState: { videosFilter, showIcon ,bySearch },
     VideoDispatch,
   } = useFilter();
 
@@ -27,6 +27,11 @@ const Videos = ({ data }) => {
   if (videosFilter === "ALL") {
     filteredArray = video;
   }
+  if (bySearch){
+    filteredArray = video.filter((item)=>item.title.toLowerCase().includes(bySearch.toLowerCase()));
+  }
+
+
   if (data !== undefined) {
     filteredArray = [data];
   }

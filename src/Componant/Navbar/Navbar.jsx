@@ -2,9 +2,11 @@ import "./navbar.css";
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { useAuth } from "../../Context/Auth-context";
+import {useFilter} from "../../Context/Filter-context"
 
 const Navbar = () => {
-  const { isStatus } = useAuth();
+  const {VideoDispatch,} = useFilter(); 
+     const { isStatus } = useAuth();
 
   return (
     <header className="navbar-container  gap-2r padding-24p position-sticky">
@@ -21,6 +23,7 @@ const Navbar = () => {
         <input
           type="search"
           placeholder="search songs"
+          onChange={(e)=>VideoDispatch({type:"SEARCH", payload:e.target.value})}
           className="Search-box padding-8p font-16p"
         />
       </section>

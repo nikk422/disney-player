@@ -6,6 +6,8 @@ const ReducerFunc=(state,action)=>{
             return{...state,videosFilter:action.payload};
         case "SHOW_ICON":
             return {...state,showIcon:action.payload.id};
+        case "SEARCH":
+            return {...state,bySearch:action.payload}
                         
          default:
              return {...state}   
