@@ -45,7 +45,7 @@ export const videos = [
   },
   {
     id: "NQTTgj7XSDQ",
-    title: "Teri Ore RAHAT FATEH ALI KHAN",
+    title: "Teri Ore RAHAT FATEH",
     description: "Teri ore from Sings is king",
     creator: "TIMES MUSIC INDIA",
     views: "29M",

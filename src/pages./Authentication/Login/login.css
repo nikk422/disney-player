@@ -17,13 +17,8 @@
     padding: 0.35rem;
 }
 
-.forgetLink {
-    margin-left: 0.8rem;
-    color: var(--red-200);
-}
-
-.checkbox-remember-conditions {
-    margin-left: -3rem;
+.checkbox-remember {
+    margin-left: -9rem;
 }
 
 .loginbtn-createAcount {

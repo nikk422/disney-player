@@ -35,7 +35,11 @@
 /* All Media Queries here */
 
 
-@media screen and (max-width: 1235px) {
+
+
+
+
+@media screen and (max-width: 1343px) {
     .genre-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -50,12 +54,17 @@
         height: 115vh;
         padding-top: 1rem;
     }
+    .single-video-container{
+        display: grid;
+        grid-template-columns: 12.5rem 1fr 20.5rem;
+    }
+    
 
 }
 
 
 
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1190px) {
     .video-container {
         display: grid;
         grid-template-columns: 1fr;
@@ -74,6 +83,10 @@
         position: fixed;
         top: 75%;
         left: 27rem;
+    }
+    .models-contain{
+        top:50%;
+        left:30rem;
     }
 
     iframe {
@@ -190,6 +203,10 @@
         padding-top: 0.8rem;
     }
 
+    .models-contain{
+        top:50%;
+        left:20rem;
+    }
 }
 
 @media screen and (max-width: 670px) {
@@ -197,6 +214,10 @@
         position: fixed;
         top: 75%;
         left: 15rem;
+    }
+    .models-contain{
+        top:50%;
+        left:20rem;
     }
 }
 
@@ -255,6 +276,10 @@
         top: 60%;
         left: 12rem;
     }
+    .models-contain{
+        top:67%;
+        left:15rem;
+    }
 
     iframe {
         width: 100%;
@@ -295,6 +320,14 @@
 
 
 }
+
+/* @media screen and (max-width:503px){
+    .models-contain{
+        top:60%;
+        left:15rem;
+    }
+    
+} */
 
 @media screen and (max-width: 485px) {
     .genreChips-container {
@@ -338,6 +371,7 @@
         font-size: 0.8rem;
         margin-left: 0.4rem;
     }
+   
 }
 
 @media screen and (max-width: 425px) {
@@ -347,7 +381,19 @@
         left: 12rem;
         width: 90%;
     }
+    .models-contain{
+        top:68%;
+        left:13rem;
+    }
 }
+
+@media screen and (max-width:382px){
+    .models-contain{
+        top:70%;
+        left:12rem;
+    }
+    }
+ 
 
 
 @media screen and (max-width: 363px) {
@@ -355,7 +401,10 @@
         position: fixed;
         top: 50%;
         left: 11rem;
-        width: 90%;
+    }
+    .models-contain{
+        top:75%;
+        left:11rem;
     }
 }
 

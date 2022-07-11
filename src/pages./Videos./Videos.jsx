@@ -14,7 +14,7 @@ const Videos = ({ data }) => {
   const { getHistoryVideo } = useHistory();
 
   const {
-    VideoState: { videosFilter, showIcon ,bySearch },
+    VideoState: { videosFilter, showIcon, bySearch },
     VideoDispatch,
   } = useFilter();
 
@@ -27,10 +27,11 @@ const Videos = ({ data }) => {
   if (videosFilter === "ALL") {
     filteredArray = video;
   }
-  if (bySearch){
-    filteredArray = video.filter((item)=>item.title.toLowerCase().includes(bySearch.toLowerCase()));
+  if (bySearch) {
+    filteredArray = video.filter((item) =>
+      item.title.toLowerCase().includes(bySearch.toLowerCase())
+    );
   }
-
 
   if (data !== undefined) {
     filteredArray = [data];
@@ -80,46 +81,50 @@ const Videos = ({ data }) => {
                 </i>
               </section>
               {item.id === showIcon && showShare ? (
-                <div className="showIcon">
-                  <div className="showIcon-contain flex-column gap-8p margin-8p">
-                    {WatchLaterVideos.some((data) => data.id === item.id) ? (
+                  <div
+                    className="showIcon"
+                    onClick={() => setShowShare(!showShare)}
+                  >
+                    <div className="showIcon-contain flex-column gap-8p margin-8p">
+                      {WatchLaterVideos.some((data) => data.id === item.id) ? (
+                        <i
+                          onClick={() => {
+                            return (
+                              removeWatchVideo(item.id),
+                              setShowShare(!showShare)
+                            );
+                          }}
+                          style={{ color: "black" }}
+                          className="fas fa-clock watch-later-btn hoverText"
+                        >
+                          Remove from Watch Later
+                        </i>
+                      ) : (
+                        <i
+                          onClick={() => {
+                            return (
+                              getWatchLaterVideo(item), setShowShare(!showShare)
+                            );
+                          }}
+                          className="fas fa-clock watch-later-btn"
+                        >
+                          Save to Watch Later
+                        </i>
+                      )}
                       <i
                         onClick={() => {
                           return (
-                            removeWatchVideo(item.id), setShowShare(!showShare)
+                            setShowModel(!showModel),
+                            setPlaylistVideoArray(item),
+                            setShowShare(!showShare)
                           );
                         }}
-                        style={{ color: "red" }}
-                        className="fas fa-clock watch-later-btn"
+                        className="fas fa-folder-plus"
                       >
-                        Remove from Watch Later
+                        Add to Playlist
                       </i>
-                    ) : (
-                      <i
-                        onClick={() => {
-                          return (
-                            getWatchLaterVideo(item), setShowShare(!showShare)
-                          );
-                        }}
-                        className="fas fa-clock watch-later-btn"
-                      >
-                        Save to Watch Later
-                      </i>
-                    )}
-                    <i
-                      onClick={() => {
-                        return (
-                          setShowModel(!showModel),
-                          setPlaylistVideoArray(item),
-                          setShowShare(!showShare)
-                        );
-                      }}
-                      className="fas fa-folder-plus"
-                    >
-                      Add to Playlist
-                    </i>
+                    </div>
                   </div>
-                </div>
               ) : (
                 ""
               )}

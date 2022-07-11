@@ -53,9 +53,6 @@ const Login = () => {
           </lable>
           <lable htmlFor="remember">
             <input type="checkbox" className="checkbox-remember" /> Remember me
-            <a className="forgetLink" href="/">
-              Forgot Password ?
-            </a>
           </lable>
           <button
             className="loginbtn-createAcount padding-4px font-18p"

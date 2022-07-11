@@ -7,9 +7,11 @@ const Signup=()=>{
   const handleCreateAccount = async ()=>{
     try {
       const res = await axios.post("/api/auth/signup", 
-        {firstName:"Sajjad", lastName:"Mazhar", email:"sajjad@gmail.com", password:"Sajj@d123"}
+        {firstName:"Nikhil", lastName:"Malviya", email:"nikkmalviya422@gmail.com", password:"nikk@123"}
       )
       console.log(res.data)
+      localStorage.setItem("authToken", res.data.encodedToken);
+      toast.success("SignUp is successfully!", {});
     } catch (error) {
       console.log(error.message)
     }
@@ -63,7 +65,9 @@ const Signup=()=>{
           <lable htmlFor="term & conditions">
             <input type="checkbox" className="checkbox-remember-conditions" /> I accept all Term & Conditions
           </lable>
+          <Link to="/videoListing">
           <button className="loginbtn-createAcount font-18p" onClick={handleCreateAccount}>Create New Account</button>
+          </Link>
           <Link to="/login">
           <button className="createBtn-alreadyBtn padding-8p">Already have an Account </button>
           </Link>

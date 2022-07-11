@@ -11,7 +11,7 @@ const Genre = () => {
     <main className="genre-container">
       {genre.map((item) => (
         <section className="genre-contain flex-column  align-center gap-8p padding-4px ">
-          <Link to="videoListing">
+          <Link to="/videoListing">
             <button
               onClick={() =>
                 VideoDispatch({ type: "FILTER_BY_GENRE", payload: item.genre })

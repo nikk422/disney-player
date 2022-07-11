@@ -12,8 +12,21 @@
 }
 
 
+@media screen and (max-width:1343px) {
+    .single-video-container{
+        display: grid;
+        grid-template-columns: 12.5rem 1fr 20.5rem;
+    }
+    iframe {
+        width: 100%;
+        height: 60vh;
+        padding: 0.2rem;
+    }
+}
 
-@media screen and (max-width: 1180px) {
+
+
+@media screen and (max-width: 1190px) {
     .single-video-container{
         display: grid;
         grid-template-columns: 1fr;

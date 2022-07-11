@@ -35,7 +35,16 @@
 }
 
 
-@media screen and (max-width: 1180px) {
+@media screen and (max-width:1343px){
+    .trash-icon-play{
+        top:8rem;
+    }
+    
+}
+
+
+
+@media screen and (max-width: 1190px) {
     .playlist-container {
         display: grid;
         grid-template-columns: 1fr;

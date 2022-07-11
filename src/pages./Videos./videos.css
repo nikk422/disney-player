@@ -30,6 +30,7 @@
 }
 
 
+
 .showIcon{
     position: absolute;
     background-color: rgb(7 89 133);
@@ -39,6 +40,8 @@
     width: fit-content;
   
 }
+
+
 
 .model-container{
     border:2px solid var(--black-1000);
@@ -50,6 +53,8 @@
     left:40rem;
     transform: translate(-50%,-50%);
     color:var(--black-1000);
+    z-index: 10;
+
 }
 
 .cross-icon{
@@ -61,12 +66,28 @@
     width:4.5rem;
 }
 
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1343px) {
 
     .videolist-contain {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         padding-bottom: 3.5rem;
     }
-
+    .video-img{
+        width:16rem;
+    }
+   
 }
+
+@media screen and (max-width: 1302px) {
+
+    .videolist-contain {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding-bottom: 3.5rem;
+    }
+    .video-img{
+        width:14.3rem;
+    }
+}
+
