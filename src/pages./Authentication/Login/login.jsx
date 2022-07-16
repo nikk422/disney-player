@@ -8,8 +8,12 @@ import { toast } from "react-toastify";
 
 const Login = () => {
   const { setLogin, setIsStatus } = useAuth();
+  const [loginDetail, setLoginDetail]=useState({
+    email:"", password:""
+  })
   const location = useLocation();
   const navigate = useNavigate();
+
 
   const loginHandler = () => {
     setLogin((Login) => !Login);
@@ -40,8 +44,8 @@ const Login = () => {
             <input
               type="email"
               placeholder="Enter your Email"
-              className="auth-detail-input font-16p flex margin-2p "
-            />
+              className="auth-detail-input font-16p flex margin-2p"
+                          />
           </lable>
           <lable htmlFor="password">
             Enter your password
