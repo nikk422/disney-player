@@ -37,3 +37,7 @@
     width: 15rem;
     background-color: var(--pink-100);
 }
+
+.wrong-input{
+    color:red;
+}
