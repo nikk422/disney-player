@@ -2,14 +2,13 @@ import {useAuth} from "../Context/Auth-context"
 import {Navigate, useLocation} from "react-router-dom";
 
 const RequireAuth=({children})=>{
-    const {Login}=useAuth()
+    const {Login : {user}}=useAuth()
     const location=useLocation()
-    console.log(location)
 
-    return Login ? (
+    return user ? (
         children
     ):(
-        <Navigate to="/login" state={{from:location}} replace/>
+        <Navigate to="/login" state={{pathname: location.pathname }} replace />
 
     )
     

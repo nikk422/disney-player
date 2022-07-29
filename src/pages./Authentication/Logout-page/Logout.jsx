@@ -1,17 +1,12 @@
 import Navbar from "../../../Componant/Navbar/Navbar";
 import { useAuth } from "../../../Context/Auth-context";
 import { Link } from "react-router-dom";
-import {  toast } from 'react-toastify';
 
 
 const Logout = () => {
-  const { setIsStatus } = useAuth();
+  const {logoutHandler } = useAuth();
 
-  const logoutHandler = () => {
-    setIsStatus(false);
-    localStorage.removeItem("authToken");
-    toast.info("Successfully Logout..")
-  };
+  
   return (
     <div>
       <Navbar />

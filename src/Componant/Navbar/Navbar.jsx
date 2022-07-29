@@ -6,7 +6,7 @@ import {useFilter} from "../../Context/Filter-context"
 
 const Navbar = () => {
   const {VideoDispatch,} = useFilter(); 
-     const { isStatus } = useAuth();
+    const {Login  }= useAuth();
 
   return (
     <header className="navbar-container  gap-2r padding-24p position-sticky">
@@ -28,9 +28,9 @@ const Navbar = () => {
         />
       </section>
       <section>
-        {isStatus ? (
+        {Login.user ? (
           <Link to="/logout">
-            <i className=" loginIcon font-26p hoverText">
+            <i className=" loginIcon font-26p hoverText" >
               <FaUser />
             </i>
           </Link>

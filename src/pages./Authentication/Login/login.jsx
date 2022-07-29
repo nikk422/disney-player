@@ -1,36 +1,55 @@
 import { useAuth } from "../../../Context/Auth-context";
+import { useState , useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./login.css";
 import { Link } from "react-router-dom";
 import Navbar from "../../../Componant/Navbar/Navbar";
-import axios from "axios";
-import { toast } from "react-toastify";
+import { LoginValidChecker } from "../../../styless/passwordChecker"
+
 
 const Login = () => {
-  const { setLogin, setIsStatus } = useAuth();
-  const [loginDetail, setLoginDetail]=useState({
-    email:"", password:""
-  })
   const location = useLocation();
   const navigate = useNavigate();
+  const { LoginPage, Login } = useAuth();
+  const [error, setError] = useState({ isError: true })
+  const [loginDetail, setLoginDetail] = useState({
+    email: "",
+    password: "",
+  });
+
+
+
+  useEffect(() => {
+    if (!error.isError) {
+      LoginPage(loginDetail);
+    }
+},[error]);
+
+useEffect(() => {
+  if (Login.user && location.state !== null) {
+      navigate(location.state.pathname)
+  }
+}, [Login, error]);
+
 
 
   const loginHandler = () => {
-    setLogin((Login) => !Login);
-    navigate(location.state.from.pathname);
+    setError({ isError: false });
+    setLoginDetail({
+      email: "nikmalviya422@gmail.com",
+      password: "nikhil@123",
+  })
   };
+
+
+  const inputHandler = (e) => {
+    const { name, value } = e;
+    setLoginDetail({ ...loginDetail, [name]: value })
+}
+
   const clickHandler = async () => {
-    try {
-      const res = await axios.post("/api/auth/login", {
-        email: "nikmalviya422@gmail.com",
-        password: "nikhil@123",
-      });
-      localStorage.setItem("authToken", res.data.encodedToken);
-      toast.success("Login is successfully! Click the Login as a Guest", {});
-      setIsStatus(true);
-    } catch (err) {
-      console.log(err);
-    }
+    const error = LoginValidChecker(loginDetail);
+    setError(error)
   };
 
   return (
@@ -43,18 +62,30 @@ const Login = () => {
             Enter your Email
             <input
               type="email"
+              name="email"
+              value={loginDetail.email}
+              required
               placeholder="Enter your Email"
+              onChange={(e) => inputHandler(e.target)}
               className="auth-detail-input font-16p flex margin-2p"
-                          />
+            />
           </lable>
+          {error.email && <div className="wrong-input">{error.email}</div>}
+
           <lable htmlFor="password">
             Enter your password
             <input
               type="password"
+              name="password"
+              value={loginDetail.password}
+              required
+              onChange={(e) => inputHandler(e.target)}
               placeholder="Enter your Password"
               className="auth-detail-input font-16p flex margin-2p"
             />
           </lable>
+          {error.password && <div className="wrong-input">{error.password}</div>}
+
           <lable htmlFor="remember">
             <input type="checkbox" className="checkbox-remember" /> Remember me
           </lable>
@@ -72,7 +103,7 @@ const Login = () => {
           </button>
           <Link to="/signup">
             <button className="createBtn-alreadyBtn padding-8p">
-              Create New Account{" "}
+              Create New Account
             </button>
           </Link>
         </div>
