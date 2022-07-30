@@ -1,12 +1,14 @@
 import { useContext, createContext, useState } from "react";
 import axios from "axios";
 import {  toast } from 'react-toastify';
+import {useNavigate} from "react-router-dom"
 
 
 
 const WatchLaterContext = createContext();
 
 const WatchlaterProvider = ({ children }) => {
+  const navigate = useNavigate();
   const [WatchLaterVideos, setWatchLaterVideos] = useState([]);
 
   const getWatchLaterVideo = async (videoRequest) => {
@@ -21,6 +23,7 @@ const WatchlaterProvider = ({ children }) => {
       setWatchLaterVideos(res.data.watchlater);
       toast.success("Video Added in WatchLater..")
     } catch (error) {
+      navigate("/login")
       toast.error("Please Logged in ..")
 
     }

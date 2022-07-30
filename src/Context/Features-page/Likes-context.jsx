@@ -1,12 +1,14 @@
 import { useContext, createContext, useState } from "react";
 import axios from "axios";
 import {  toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
 
 
 
 const LikesContext = createContext();
 
 const LikesProvider = ({ children }) => {
+  const navigate= useNavigate();
   const [LikeVideos, setLikeVideos] = useState([]);
 
   const getLikedVideo = async (videoRequest) => {
@@ -21,6 +23,7 @@ const LikesProvider = ({ children }) => {
       setLikeVideos(res.data.likes);
       toast.success("Like The Video..")
     } catch (error) {
+      navigate("/login")
       console.log(error);
 
     }
