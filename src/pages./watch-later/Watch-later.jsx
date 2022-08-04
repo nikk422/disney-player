@@ -34,7 +34,6 @@ const WatchLater = () => {
             </section>
           ) : (
             <h2 className="WatchLater-heading text-align margin-top-16p">
-              {" "}
               Watch Later is Empty
             </h2>
           )}

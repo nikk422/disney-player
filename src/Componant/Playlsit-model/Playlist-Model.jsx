@@ -20,7 +20,7 @@ const PlaylistModel = ({ data }) => {
     <div>
       <div className="models-contain">
         <div className="model-container padding-22px">
-          <section className="input-createBtn-section flex gap-2r">
+          <section className="input-createBtn-section flex gap-1r">
             <input
               type="text"
               onChange={(e) => setModelInput(e.target.value)}
@@ -32,7 +32,7 @@ const PlaylistModel = ({ data }) => {
               className="fa fa-times cross-icon"
               aria-hidden="true"
             ></i>
-            <button onClick={clickHandler} className="create-btn padding-4px">
+            <button onClick={clickHandler} className="create-btn padding-4px ">
               create
             </button>
           </section>
@@ -41,6 +41,7 @@ const PlaylistModel = ({ data }) => {
               <div>
                 <lable>
                   <input
+                  className="margin-top-8p"
                     onClick={() => {
                       return (
                         AddPlaylistVideo(ele._id, data),

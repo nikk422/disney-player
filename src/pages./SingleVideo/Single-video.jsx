@@ -1,5 +1,4 @@
 import "./single.css";
-// import {useEffect} from "react";
 import { useParams } from "react-router-dom";
 import { useVideos } from "../../Context/Videos-Context";
 import Sidebar from "../../Componant/SideBar/SideBar";

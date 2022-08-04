@@ -2,8 +2,8 @@ import "./genreFilter.css";
 import { useFilter } from "../../Context/Filter-context";
 
 const GenreFilter = () => {
-  const { VideoDispatch } = useFilter();
-
+  const { VideoState, VideoDispatch } = useFilter();
+  console.log(VideoState.videosFilter);
   const filters = ["ALL", "LOFI", "ROMANTIC", "SAD", "EVERGREEN", "POP"];
   return (
     <div className="genreChips-container position-sticky-6r padding-4px z-index-1">
@@ -11,7 +11,7 @@ const GenreFilter = () => {
         {filters.map((item) => (
           <div>
             <button
-              className="genre-btn padding-8p margin-8p"
+              className={VideoState.videosFilter === item ? "genreFocus padding-8p margin-8p" : "genre-btn padding-8p margin-8p"}
               onClick={() =>
                 VideoDispatch({ type: "FILTER_BY_GENRE", payload: item })
               }

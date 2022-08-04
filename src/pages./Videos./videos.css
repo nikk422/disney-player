@@ -46,20 +46,22 @@
 .model-container{
     border:2px solid var(--black-1000);
     width: fit-content;
-    background-color:var(--full-white);
-    height: fit-content;
+    background-color:var(--black-1000);
+    height:25vh;
     position: fixed;
     top:25rem;
-    left:40rem;
+    left:50rem;
     transform: translate(-50%,-50%);
-    color:var(--black-1000);
+    color:var(  --full-white);
     z-index: 10;
+    border-radius:0.5rem;
+    border: 2px solid white;
 
 }
 
 .cross-icon{
     position: absolute;
-    top:0.2rem;
+    top:0.1rem;
     right:0.5rem;
 }
 .create-btn{

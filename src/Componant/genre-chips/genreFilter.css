@@ -11,6 +11,10 @@
     color: var(--full-white);
 }
 
-.genre-btn:focus {
-    border: 4px solid #c026d3;
+.genreFocus{
+    border-radius: 0.5rem;
+    border:4px solid rgb(190, 14, 161);
+    font-weight: bold;
+    color: var(--full-white);
+    background-image: var(--linear-color);
 }

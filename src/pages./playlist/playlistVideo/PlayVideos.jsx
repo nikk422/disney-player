@@ -19,7 +19,6 @@ const PlaylistVideo = () => {
   if (playlistVideo !== undefined) {
     getPlaylist = playlistVideo.find((item) => item._id === playlistId);
   }
-  console.log(playlistVideo, "getplayist");
 
   const deleteFunc = (playlistId, videoId) => {
     removePlaylistVideo(playlistId, videoId);

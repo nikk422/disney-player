@@ -2,7 +2,8 @@ import Sidebar from "../../Componant/SideBar/SideBar";
 import "./playlist.css";
 import Navbar from "../../Componant/Navbar/Navbar";
 import { usePlaylist } from "../../Context/Features-page/Playlist-context";
-import { Link } from "react-router-dom";
+import { Link  } from "react-router-dom";
+
 
 const Playlist = () => {
   const { playlist, removePlaylist } = usePlaylist();
