@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {Link , useNavigate} from "react-router-dom";
 import {useEffect , useState} from "react";
 import Navbar from "../../../Componant/Navbar/Navbar";
 import { SignupValidChecker } from "../../../styless/passwordChecker";
@@ -7,6 +7,7 @@ import {useAuth} from "../../../Context/Auth-context";
 
 const Signup=()=>{
 
+  const navigate= useNavigate();
   const [error, setError] = useState({ isError: true });
   const [userDetail, setUserDetail] = useState({
       firstName: "",
@@ -16,7 +17,7 @@ const Signup=()=>{
       confirmpassword: ""
   });
 
-  const {SignupPage}= useAuth();
+  const {SignupPage }= useAuth();
 
   useEffect(() => {
     if (!error.isError) {
@@ -35,6 +36,7 @@ const Signup=()=>{
     const error = SignupValidChecker(userDetail);
     setError(error);
   }
+
 
     return(
       <div>

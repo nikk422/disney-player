@@ -1,11 +1,13 @@
 import { useContext, createContext, useState } from "react";
 import axios from "axios";
 import {  toast } from 'react-toastify';
+import {useNavigate} from "react-router-dom";
 
 
 const PlaylistContext = createContext();
 
 const PlaylistProvider = ({ children }) => {
+  const navigate=useNavigate();
   const [playlist, setPlaylist] = useState([]);
   const [playlistVideo, setPlaylistVideo] = useState();
   const [showModel, setShowModel] = useState(false);
@@ -25,6 +27,7 @@ const PlaylistProvider = ({ children }) => {
       setPlaylist(res.data.playlists);
       toast.success("Create New Playlist...")
     } catch (error) {
+      navigate("/login")
       toast.error("Please Logged in ...")
     }
   };

@@ -1,11 +1,13 @@
 import {useContext,createContext , useState} from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
+import {useNavigate} from "react-router-dom"
 
 
 const AuthContext=createContext()
 
 const AuthProvider=({children})=>{
+    const navigate = useNavigate();
     const [Login, setLogin]=useState({
         user:localStorage.getItem("user"),
         authToken:localStorage.getItem("authToken")
@@ -23,6 +25,7 @@ const AuthProvider=({children})=>{
             if (status === 200){
                 toast.success(`Welcome Back ${data.foundUser.firstName}`)
             }
+            navigate("/")
 
         } catch (err){
             console.log(err);
@@ -50,6 +53,7 @@ const AuthProvider=({children})=>{
             if (status === 201){
                 toast.success(`Welcome ${data.createdUser.firstName}`)
             }
+            navigate("/")
         } catch (err) {
             console.log(err)
             toast.error("Failed To Singup")

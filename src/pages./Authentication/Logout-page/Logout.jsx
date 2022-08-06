@@ -14,7 +14,7 @@ const Logout = () => {
         <section className="auth-contain flex-column align-center gap-10px padding-17p">
           <h2>LogOut</h2>
           <p>Thank you for coming Disney Player </p>
-          <Link to="/">
+          <Link to="/login">
           <button onClick={logoutHandler} className="loginbtn-createAcount">
             Logout
           </button>

@@ -3,7 +3,6 @@ import { useFilter } from "../../Context/Filter-context";
 
 const GenreFilter = () => {
   const { VideoState, VideoDispatch } = useFilter();
-  console.log(VideoState.videosFilter);
   const filters = ["ALL", "LOFI", "ROMANTIC", "SAD", "EVERGREEN", "POP"];
   return (
     <div className="genreChips-container position-sticky-6r padding-4px z-index-1">
